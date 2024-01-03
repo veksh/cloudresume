@@ -1,8 +1,3 @@
-# to override on command line
-# - terraform plan -var='some-list=["abc", "123"]' -var=...
-# - terraform plan -var-file="testing.tfvars"  # and put HCL there
-# - export TF_VAR_image_id=ami-abc123
-
 variable "bucket_name" {
   description = "name of the bucket to create"
   type        = string
@@ -12,7 +7,7 @@ variable "bucket_name" {
 variable "bucket_tags" {
   description = "additional tags to assign to the bucket"
   type        = map(string)
-  default     = {
+  default = {
     Usage = "web-hosting"
   }
 }

@@ -1,5 +1,4 @@
-# to run with venv:
-# ansible-playbook -i localhost, -c local \
+# to run with venv: ansible-playbook -i localhost, -c local \
 #   --extra-vars="ansible_python_interpreter=$(which python)" \
 #   --diff upload.yaml
 - name: Upload files to s3 bucket

@@ -1,7 +1,3 @@
-# terraform init [-backend-config=s3-site.s3.tfbackend]
-# terraform fmt -diff -check
-# terraform validate - plan [-var-file=s3-site.tfvars]- apply - show - state list/show - destroy
-
 locals {
   env_name    = "prod"
   proj_name   = "cloudresume"
@@ -22,7 +18,6 @@ terraform {
     }
   }
 
-  # lets keep the defaults here and override in projects if required (like vars)
   backend "s3" {
     region         = "eu-west-2"
     dynamodb_table = "veksh-terraform-locks"
@@ -33,7 +28,6 @@ terraform {
 
 provider "aws" {
   region = "eu-west-2"
-  # no way to remove them in resources, so keep only necessary
   default_tags {
     tags = {
       Environment = "${local.env_name}"
@@ -43,7 +37,6 @@ provider "aws" {
 }
 
 # cloudfront requires (custom) cert to be in "us-east-1" region
-# no need for 2nd provider if using only default cert
 provider "aws" {
   alias  = "us-east-1"
   region = "us-east-1"
@@ -61,6 +54,8 @@ provider "godaddy-dns" {}
 resource "aws_s3_bucket" "main" {
   bucket = var.bucket_name
   tags   = var.bucket_tags
+  # to delete it recursively on "terraform destroy"
+  # force_destroy = true
 }
 
 resource "aws_acm_certificate" "nondefault_cert" {
@@ -125,10 +120,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   comment             = "Hosting my resume site files"
   default_root_object = "index.html"
 
-  # enable together with custom cert
   aliases = var.website_names
 
-  # required
   default_cache_behavior {
     allowed_methods  = ["HEAD", "GET", "OPTIONS"]
     cached_methods   = ["HEAD", "GET", "OPTIONS"]
@@ -141,7 +134,8 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
         forward = "all"
       }
     }
-    viewer_protocol_policy = "allow-all" # or "redirect-to-https"
+    # or "redirect-to-https"
+    viewer_protocol_policy = "allow-all"
   }
 
   restrictions {
@@ -156,14 +150,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     ssl_support_method = "sni-only"
   }
 
+  # # mb also
   # logging_config {
   #   include_cookies = false
   #   bucket          = "mylogs.s3.amazonaws.com"
   #   prefix          = "myprefix"
-  # }
-
-  # tags = {
-  #   Environment = "production"
   # }
 }
 
@@ -183,6 +174,7 @@ resource "aws_s3_bucket_policy" "main_s3_policy" {
   policy = data.aws_iam_policy_document.main_s3_policy_doc.json
 }
 
+# also managed by ansible (with a bit of a fight over the tags)
 resource "aws_s3_object" "site_index" {
   key          = "index.html"
   bucket       = aws_s3_bucket.main.id
