@@ -1,6 +1,0 @@
-# see https://developer.hashicorp.com/terraform/language/settings/backends/s3
-# and https://developer.hashicorp.com/terraform/language/settings/backends/configuration
-# set same as defaults in main.tf to simplify testing
-dynamodb_table = "veksh-terraform-locks"
-bucket         = "veksh-terraform-state"
-key            = "seconder/gh-s3-site.tfstate"

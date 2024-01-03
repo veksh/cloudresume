@@ -1,4 +1,4 @@
-name: lint ansible pull request
+name: check ansible PR
 
 on:
   pull_request:

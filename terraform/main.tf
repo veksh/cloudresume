@@ -3,8 +3,8 @@
 # terraform validate - plan [-var-file=s3-site.tfvars]- apply - show - state list/show - destroy
 
 locals {
-  env_name    = "thirder"
-  proj_name   = "gh-s3-site"
+  env_name    = "prod"
+  proj_name   = "cloudresume"
   name_prefix = "veksh"
 }
 
@@ -27,7 +27,7 @@ terraform {
     region         = "eu-west-2"
     dynamodb_table = "veksh-terraform-locks"
     bucket         = "veksh-terraform-state"
-    key            = "seconder/gh-s3-site.tfstate"
+    key            = "seconder/cloudresume.tfstate"
   }
 }
 
@@ -81,22 +81,22 @@ resource "godaddy-dns_record" "cert_challenge" {
   for_each = {
     for dvo in aws_acm_certificate.nondefault_cert.domain_validation_options :
       dvo.domain_name => {
-        name  = trimsuffix(dvo.resource_record_name, join("", [".", var.website_domain, "."]))
+        name = trimsuffix(dvo.resource_record_name, join("", [".", var.website_domain, "."]))
         data = trimsuffix(dvo.resource_record_value, ".")
       }
   }
 
   # (top-level domain of) each.key would be better, same domain now
   domain = var.website_domain
-  type = "CNAME"
-  name = each.value.name
-  data = each.value.data
+  type   = "CNAME"
+  name   = each.value.name
+  data   = each.value.data
 }
 
 # use aws_acm_certificate_validation.example.certificate_arn
 resource "aws_acm_certificate_validation" "nondefault_cert_valid" {
-  provider = aws.us-east-1
-  certificate_arn         = aws_acm_certificate.nondefault_cert.arn
+  provider        = aws.us-east-1
+  certificate_arn = aws_acm_certificate.nondefault_cert.arn
   validation_record_fqdns = [
     for dvo in aws_acm_certificate.nondefault_cert.domain_validation_options :
       dvo.resource_record_name]
@@ -122,7 +122,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   enabled             = true
-  comment             = "hosting static site"
+  comment             = "Hosting my resume site files"
   default_root_object = "index.html"
 
   # enable together with custom cert
@@ -152,13 +152,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    # this is ok for default name (self.domain_name) like "d2tctm0i6bj2i4.cloudfront.net"
-    # cloudfront_default_certificate = true
-    # but lets try to go non-default
-    # acm_certificate_arn = aws_acm_certificate.nondefault_cert.arn
-    # even better, rely on validation
     acm_certificate_arn = aws_acm_certificate_validation.nondefault_cert_valid.certificate_arn
-    # required for custom cert (but not for default_certificate)
     ssl_support_method = "sni-only"
   }
 

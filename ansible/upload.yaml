@@ -1,31 +1,18 @@
-# venv: ansible-playbook -i localhost, -c local --extra-vars="ansible_python_interpreter=$(which python)" upload.yaml --diff
+# to run with venv:
+# ansible-playbook -i localhost, -c local \
+#   --extra-vars="ansible_python_interpreter=$(which python)" \
+#   --diff upload.yaml
 - name: Upload files to s3 bucket
   hosts: localhost
   connection: local
   gather_facts: false
 
   vars:
-    bucket_name: "veksh-gh-site"  # alt: common json vars file, or set env vars
+    bucket_name: "cloudresume"    # alt: common json vars file, or set env vars
     region: "eu-west-2"           # alt: AWS_REGION
     data_path: "../data/"         # tf ulploads index too, thats mostly ok
-    # def_bucket: "veksh-gh-site"   # for reading from file below, just an example
 
   tasks:
-
-    # # just an example of getting a var from terraform vars file
-    # # actually too fragile as a dependency:
-    # # common json file or env vars would be better
-    # - name: Get bucket name from tfvars
-    #   ansible.builtin.set_fact:
-    #     tf_bucket_name: >-
-    #       {{ lookup('ansible.builtin.file', '../terraform/infra.tfvars')
-    #        | regex_search('bucket_name = "([^"]+)"', '\1')
-    #        | default([def_bucket], true)
-    #        | first }}
-
-    # - name: Print this name
-    #   ansible.builtin.debug:
-    #     msg: "tf bucket is '{{ tf_bucket_name }}'"
 
     - name: Upload site data
       community.aws.s3_sync:
@@ -48,8 +35,6 @@
     - name: Print uploaded files
       ansible.builtin.debug:
         msg: "{{ res_upload.uploads | map(attribute='chopped_path') }}"
-        # for stdout_callback = debug: better multiline
-        # msg: "{{ res_upload.actionable | map(attribute='chopped_path') | to_nice_yaml }}"
       when: res_upload.uploads | length > 0
 
     - name: Print deleted files

@@ -1,4 +1,4 @@
-name: run ansible on push
+name: update site on ansible push
 
 on:
   push:

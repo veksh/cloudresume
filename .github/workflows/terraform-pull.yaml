@@ -1,4 +1,4 @@
-name: "terraform s3-site: pull"
+name: check terraform PR
 
 on:
   pull_request:
@@ -15,9 +15,6 @@ env:
   # for dns mgmt
   GODADDY_API_KEY: ${{ secrets.GODADDY_API_KEY }}
   GODADDY_API_SECRET: ${{ secrets.GODADDY_API_SECRET }}
-  # override defaults there
-  BACKEND_CONFIG: "s3-site.s3.tfbackend"
-  VARS_FILE: "s3-site.tfvars"
 
 jobs:
   terraform-check-pr:
@@ -41,7 +38,7 @@ jobs:
 
       - name: Terraform init
         id: tf-init
-        run: terraform init -backend-config="$BACKEND_CONFIG"
+        run: terraform init
 
       - name: Terraform validate
         id: tf-validate
@@ -50,7 +47,7 @@ jobs:
       - name: Terraform plan
         id: tf-plan
         # mb: -detailed-exitcode: 0 ok/no diff, 1 error, 2 ok/diff present
-        run: terraform plan -input=false -no-color -var-file="$VARS_FILE"
+        run: terraform plan -input=false -no-color
         # will fail it later; still does not produce output on error (stderr only)
         continue-on-error: true
 

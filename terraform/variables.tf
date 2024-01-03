@@ -6,23 +6,25 @@
 variable "bucket_name" {
   description = "name of the bucket to create"
   type        = string
-  default     = "veksh-gh-site"
+  default     = "cloudresume"
 }
 
 variable "bucket_tags" {
   description = "additional tags to assign to the bucket"
   type        = map(string)
-  default     = {}
+  default     = {
+    Usage = "web-hosting"
+  }
 }
 
 variable "website_names" {
   description = "dns aliases for the website, first is a main name"
   type        = list(string)
-  default     = ["gh-s3-site.veksh.in"]
+  default     = ["resume.veksh.in", "cloudresume.veksh.in"]
 }
 
 variable "website_domain" {
-  description = "top-level managed domain of website aliases, required for (godaddy) DNS mgmt"
+  description = "top-level managed domain of website aliases, for GoDaddy DNS mgmt"
   type        = string
   default     = "veksh.in"
 }
