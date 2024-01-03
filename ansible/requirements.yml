@@ -1,0 +1,8 @@
+---
+collections:
+  - name: community.aws
+    version: ">=7.0.0"
+    type: galaxy
+  - name: ansible.posix
+    version: ">=1.5.0"
+    type: galaxy

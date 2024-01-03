@@ -1,0 +1,35 @@
+name: run ansible on push
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ansible/**
+      - data/**
+
+env:
+    # in production better use an OIDC connection + pass `role-to-assume`
+    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  deploy:
+    name: Run ansible playbook
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install ansible with pip
+        run: |
+          sudo apt update
+          sudo apt install pip git
+          pip install ansible-core boto3
+
+      - name: Run ansible
+        run: |
+          cd ansible
+          ansible-galaxy collection install -r requirements.yml
+          ansible-playbook -i localhost, -c local upload.yaml --diff

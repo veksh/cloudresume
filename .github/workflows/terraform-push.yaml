@@ -1,0 +1,43 @@
+name: "terraform s3-site: push"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - terraform/**
+
+env:
+  TF_LOG: INFO
+  # in production better use an OIDC connection + pass `role-to-assume`
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  # for dns mgmt
+  GODADDY_API_KEY: ${{ secrets.GODADDY_API_KEY }}
+  GODADDY_API_SECRET: ${{ secrets.GODADDY_API_SECRET }}
+  # override defaults there
+  BACKEND_CONFIG: "s3-site.s3.tfbackend"
+  VARS_FILE: "s3-site.tfvars"
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./terraform
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set up terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0
+
+      - name: Terraform init
+        run: terraform init -backend-config="$BACKEND_CONFIG"
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve -input=false -var-file="$VARS_FILE"

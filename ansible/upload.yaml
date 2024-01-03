@@ -1,0 +1,58 @@
+# venv: ansible-playbook -i localhost, -c local --extra-vars="ansible_python_interpreter=$(which python)" upload.yaml --diff
+- name: Upload files to s3 bucket
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    bucket_name: "veksh-gh-site"  # alt: common json vars file, or set env vars
+    region: "eu-west-2"           # alt: AWS_REGION
+    data_path: "../data/"         # tf ulploads index too, thats mostly ok
+    # def_bucket: "veksh-gh-site"   # for reading from file below, just an example
+
+  tasks:
+
+    # # just an example of getting a var from terraform vars file
+    # # actually too fragile as a dependency:
+    # # common json file or env vars would be better
+    # - name: Get bucket name from tfvars
+    #   ansible.builtin.set_fact:
+    #     tf_bucket_name: >-
+    #       {{ lookup('ansible.builtin.file', '../terraform/infra.tfvars')
+    #        | regex_search('bucket_name = "([^"]+)"', '\1')
+    #        | default([def_bucket], true)
+    #        | first }}
+
+    # - name: Print this name
+    #   ansible.builtin.debug:
+    #     msg: "tf bucket is '{{ tf_bucket_name }}'"
+
+    - name: Upload site data
+      community.aws.s3_sync:
+        region: "{{ region }}"
+        bucket: "{{ bucket_name }}"
+        file_root: "{{ data_path }}"
+        delete: true
+        # on checkout dates are equal to the time of checkout
+        file_change_strategy: checksum
+        # no tags support (like "purge_tags: false" for s3_object module)
+        # will override tags with blank for objects uploaded with aws_s3_object
+        # usually not a problem: could lead to false "changed" on tf side
+      register: res_upload
+      notify:
+        - Print uploaded files
+        - Print deleted files
+
+  handlers:
+
+    - name: Print uploaded files
+      ansible.builtin.debug:
+        msg: "{{ res_upload.uploads | map(attribute='chopped_path') }}"
+        # for stdout_callback = debug: better multiline
+        # msg: "{{ res_upload.actionable | map(attribute='chopped_path') | to_nice_yaml }}"
+      when: res_upload.uploads | length > 0
+
+    - name: Print deleted files
+      ansible.builtin.debug:
+        msg: "{{ res_upload.removed }}"
+      when: res_upload.removed | length > 0
