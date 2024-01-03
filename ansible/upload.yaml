@@ -7,9 +7,9 @@
   gather_facts: false
 
   vars:
-    bucket_name: "cloudresume"    # alt: common json vars file, or set env vars
-    region: "eu-west-2"           # alt: AWS_REGION
-    data_path: "../data/"         # tf ulploads index too, thats mostly ok
+    bucket_name: "veksh-cloudresume"  # shared with tf (alt: env or common json vars)
+    region: "eu-west-2"               # alt: AWS_REGION
+    data_path: "../data/"             # tf ulploads index too, thats mostly ok
 
   tasks:
 
