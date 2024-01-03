@@ -1,7 +1,7 @@
 variable "bucket_name" {
   description = "name of the bucket to create"
   type        = string
-  default     = "cloudresume"
+  default     = "veksh-cloudresume"
 }
 
 variable "bucket_tags" {

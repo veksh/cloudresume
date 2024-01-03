@@ -1,7 +1,6 @@
 locals {
   env_name    = "prod"
   proj_name   = "cloudresume"
-  name_prefix = "veksh"
 }
 
 terraform {
