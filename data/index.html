@@ -1,9 +1,116 @@
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>So It Works</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksei Vekshin: IT Professional</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            /* color: #007bff; */
+            color: #00b3b3;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #00b3b3;
+        }
+        .contact-info {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pdf-link {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .pdf-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-  <h1>As if anybody doubted it</h1>
-  <p>Actual content will be here a bit later</p>
+    <header>
+        <h1>Aleksei Vekshin</h1>
+        <p>IT Professional</p>
+    </header>
+    
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am a Unix, DB and Network Engineer and Software Developer with over 25 years of experience in delivering IT services to buisnesses. I have a diverse IT background and have worked in a variety of roles, from ERP developer, Unix and VMWare engeneer, Network engeneer, Datacentre architect, and Oracle DBA to IT Infrastructure Team Leader for a medium-sized (7000+ employees) retail company.
+        </p>
+        <p>
+            My main areas of technical expertise are: Linux administration, datacenter virtualization, LANs and network services, enterprise mail and collaboration software, file sharing and Active Directory services, infrastructure automation, scripting and software development, system and application monitoring, relational databases, enterprise storage, high availability and business continuity, site reliability engineering, network monitoring and security.
+        </p>
+        <p>
+            My current interests include infrastructure automation (Ansible, Terraform), containerization and orchestration (k8s), cloud infrastructure (AWS), DevOps and GitOps (GitLab), software development (Go), and monitoring (Grafana, Prometheus). I'm always eager to learn new technologies (serverless?) and languages (rust?), and to try things I've never done before (ML?).
+        </p>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <p>
+            <strong>automation:</strong> Ansible, Terraform;
+            <strong>cloud:</strong> AWS, Y.Cloud, DigitalOcean, fly.io;
+            <strong>containers:</strong> Docker, podman, a bit of k8s;
+            <strong>databases:</strong> Oracle, Postgres;
+            <strong>datacenter storage:</strong> HPE 3par/Primera, Brocade FC;
+            <strong>enterprise services:</strong> AD, Samba, Communigate;
+            <strong>monitoring:</strong> Prometheus, Grafana, Netdata;
+            <strong>network services:</strong> LDAP, SNMP, DNS, NTP etc;
+            <strong>network hardware:</strong> Cisco, Juniper, HPE, Fortinet, Mikrotik;
+            <strong>OS:</strong> Linux, OpenBSD, MacOS, HP-UX, Windows;
+            <strong>programming:</strong> Go, Ruby, Python, shell; Kafka, Redis, SQL DBs;
+            <strong>virtualization:</strong> VMware, vCenter;
+            <strong>VCS and CI/CD:</strong> git, GitLab, GitHub
+        </p>
+    </section>
+
+    <section>
+        <a class="pdf-link" href="pdfs/cv-long.pdf" target="_blank">PDF version of my resume</a>
+    </section>
+
+    <section class="contact-info">
+        <h2>Contacts</h2>
+        <p>
+            Email: <script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+"'"+'>'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+'<'+'/'+'a'+'>');</script><br>
+            GitHub: <a href="https://github.com/veksh" target="_blank">github.com/veksh</a><br>
+            LinkedIn: <a href="https://www.linkedin.com/in/veksh" target="_blank">linkedin.com/in/veksh</a><br>
+        </p>
+    </section>
 </body>
 </html>
