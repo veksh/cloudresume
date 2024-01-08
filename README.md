@@ -12,7 +12,7 @@ Simple framework designed to automate the deployment of my [resume site](https:/
 
 - AWS and GoDaddy credentials must be set in repository secrets (`AWS_ACCESS_KEY_ID` + `AWS_SECRET_ACCESS_KEY` and `GODADDY_API_KEY` + `GODADDY_API_SECRET`).
 - Terraform expects to have an s3 bucket to keep the state there, steps to create are outlined [in this gist](https://gist.github.com/veksh/c6804b0d32f5138a92fa1cdb7ed67f7d)
-- Some values (like bucket name for TF state) are hard-coded to simpify configuration, review `ansible/upload.yaml` and `terraform/main.yaml` if cloning.
+- Some values (like bucket name for TF state) are hard-coded to simlpify configuration, review `ansible/upload.yaml` and `terraform/main.yaml` if cloning.
 
 ## Notes on operation
 
