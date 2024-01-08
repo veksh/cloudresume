@@ -6,76 +6,78 @@
 
 # Summary
 
-I am a Unix, DB and Network Engineer and Software Developer with over 25 years of experience in delivering IT services to businesses. I have a diverse IT background and have worked in a variety of roles, from ERP developer, Unix and VMWare engineer, Network designer, Datacenter architect, and Oracle DBA to IT Infrastructure Team Leader for a medium-sized (7000+ employees) retail company.
+I am a Unix, DB and Network Engineer and Software Developer with over 25 years of experience in delivering IT services to businesses. I have a diverse IT background and have worked in a variety of roles, from ERP developer, Unix and VMWare engineer, Network designer, Data Centre architect, and Oracle DBA to IT Infrastructure Team Leader for a medium-sized (7000+ employees) retail company.
 
-My main areas of technical expertise are: Linux administration, datacenter virtualisation, LANs and network services, enterprise mail and collaboration software, file sharing and Active Directory services, infrastructure automation, scripting and software development, system and application monitoring, relational databases, enterprise storage, high availability and business continuity, site reliability engineering, network monitoring and security.
+My main areas of technical expertise are: Linux administration, data centre virtualisation, LANs and network services, enterprise mail and collaboration software, file sharing and Active Directory services, infrastructure automation, scripting and software development, system and application monitoring, relational databases, enterprise storage, high availability and business continuity, site reliability engineering, network monitoring and security.
 
-My current interests include infrastructure automation (Ansible, Terraform), containerisation and orchestration (Docker, k8s), cloud infrastructure (AWS, Y.Cloud), DevOps and GitOps (GitHub, GitLab), software development (Go, Ruby), and monitoring (Prometheus, Grafana). I'm always eager to learn new technologies and  languages, and to try things I've never done before.
+My current interests include infrastructure automation (Ansible, Terraform), containerisation and orchestration (Docker, k8s), cloud infrastructure (AWS, Y.Cloud), DevOps and GitOps (GitHub, GitLab), software development (Go, Ruby), and monitoring (Prometheus, Grafana). I'm always eager to learn new technologies and languages, and to try things I've never done before.
 
 # Skills
+
 ## Automation
-- Ansible: using it for 5+ years, designed 20+ roles for managing Linux systems and apps, VMWare  ESXi hosts, Cisco and Juniper LAN switches, Samba Active Directory users/units/computers, Oracle v11-18 servers and many other apps and services (some roles are published on GitHub, 100+ stars)
-- Source control and CI/CD: GitLab instance administration, policy development and user education, writing continuous integration pipelines for regression testing, application deployment with git
-- Wholistic infrastructure management: using GitLab as network-wide Source of Truth and Ansible as IaC infrastructure for tasks like: pushing network configuration to LAN switches, configuring Linux-based DNS and DHCP servers, adding machine accounts to Active Directory, generating LAN configuration reports
+- Ansible: using it for 5+ years, designed 20+ roles for managing Linux systems and apps, VMWare ESXi hosts, Cisco and Juniper LAN switches, Samba Active Directory users/units/computers, Oracle v11-18 servers and many other apps and services.
+- Source control and CI/CD: GitLab instance administration, policy development and user education, writing continuous integration pipelines for acceptance testing, application deployment with git.
+- Wholistic infrastructure management: using GitLab as network-wide Source of Truth and Ansible as IaC tool for tasks like pushing network configuration to LAN switches, configuring Linux-based DNS and DHCP servers, adding machine accounts to Active Directory, generating LAN configuration reports.
+
 ## Cloud
-- Services: familiar with the basic subset of AWS stack like IAM, EC2, VPCs, S3, CloudFront, DynamoDB
+- Services: familiar with the basic subset of AWS stack like IAM, EC2, VPCs, S3, CloudFront, DynamoDB.
 - Automation: managing AWS services from awscli, Ansible playbooks, Terraform modules, Python scripts, and with CloudFormation templates
-- VM deployment: image building with Packer, post-install configuration with cloud-init and Ansible
-- Monitoring: logging to CloudWatch and Grafana Cloud
-- Serverless: basic familiarity with AWS Lambda stack
-- Alternative clouds: some experience with Yandex Cloud, DigitalOcean and Fly.io
+- VM deployment: image building with Packer, post-install configuration with cloud-init and Ansible.
+- Monitoring: logging to CloudWatch and Grafana Cloud.
+- Serverless: basic familiarity with AWS Lambda stack.
+- Alternative clouds: some experience with Yandex Cloud, DigitalOcean and Fly.io.
 
 ## Containers and orchestrators
-- Containers: building containers with Docker and Buildah, integrating with systemd services, publishing multi-architecture builds to custom repos, automated deployment with GitHub actions
-- Orchestration: using Docker Compose and Swarm for local development
-- Kubernetes: deploying local clusters (minikube, k3s), stateful apps deployment set-up on local (k3s) and cloud (y.cloud, EKS) clusters
+- Containers: building containers with Docker and Buildah, integrating with systemd services, publishing multi-architecture builds to custom repos, automated deployment with GitHub actions.
+- Orchestration: using Docker Compose and Swarm for local development.
+- Kubernetes: some experience deploying local clusters (minikube, k3s), stateful apps on local (k3s) and cloud (y.cloud, EKS) clusters.
 
 ## Databases
-- Oracle: DBA for some medium-scale (<1TB) 11g, 18c, XE and EE installations: installing and patching, DB creation and tuning, monitoring and SQL tuning, backups, publishing AWR reports for developers etc
-- Automation: Ansible roles to install, patch and maintain Oracle servers (EE and XE)
-- ETL: a pipeline for Progress to Oracle data transport, bidirectional integration with website CMS
-- DB hot cloning: fan-out partial replication of staging DB with scripted storage snapshots
-- Other DBs: some familiarity with Progress RDBMS, Postgres, SQLite, KV databases like Redis and DynamoDB
+- Oracle: DBA for some medium-scale (<1TB) 11g, 18c, XE and EE installations: installing and patching, DB creation and tuning, monitoring and SQL tuning, backups, publishing AWR reports for developers.
+- Automation: developed several Ansible roles to install, patch and maintain Oracle servers (EE and XE).
+- ETL: a pipeline for Progress to Oracle data transport, bidirectional integration with company web site CMS.
+- DB hot cloning: fan-out partial replication of staging DB with scripted storage snapshots.
+- Other DBs: some familiarity with Progress RDBMS, Postgres, SQLite, KV databases like Redis and DynamoDB.
 
-## Datacenter networking, hardware and storage
-- Cisco Nexus switches: VPC and QoS configuration, security policies with VLANs and ACLs
-- SAN hardware: configuring redundant fabrics on Brocade FibreChannel switches
-- Enterprise storage: using HPE 3Par/Primera family of virtualised SAN storage arrays including advanced functionality like CoW snapshots for backup and DB cloning; some familiarity with Huawei and Hitachi storage arrays
-- Server hardware: managing a fleet of HPE ProLiant and Dell RX servers, patching, deploying custom ESXi images, remote management with iLO and iDRAC
-- Environment monitoring: with APC NetBotz, Uniping and APC UPS temperature sensors
+## Data Centre networking, hardware and storage
+- Cisco Nexus switches: VPC and QoS configuration, security policies with VLANs and ACLs.
+- SAN hardware: configuring redundant fabrics on Brocade FibreChannel switches and HPE 3par/Primera storage.
+- Enterprise storage: using HPE 3Par/Primera family of virtualised SAN storage arrays, including advanced functionality like scripted CoW snapshots for backup and DB cloning; some familiarity with Huawei and Hitachi storage arrays.
+- Server hardware: managing a fleet of HPE ProLiant and Dell RX servers, patching, deploying custom ESXi images, remote management with iLO and iDRAC.
+- Environment monitoring: with APC NetBotz, UniPing and APC UPS temperature sensors.
 
 ## Enterprise applications
-- LAN infrastructure services: implemented DNS, DHCP, NTP, TFTP on Linux
-- Mail: using Postfix as MTA, Communigate for IMAP, POP, ActiveSync, webmail, calendaring (2000+ users), FortiMail/IronPort AS/AV appliances as external relays, security protocols like SPF
-- Active Directory on Samba: Ansible automated deployment of domain controllers and file servers, automated user and computer management, provisioning of user accounts
-- Team collaboration: project management and time tracking with Trello, knowledge base with GitLab Wiki
-- Others: helped to deploy, maintain and monitor many other apps, in-house (ERP, reporting, CRM), commercial (like Russian SAP-like accounting platform "1C") and open-source (Apache and Nginx web servers, Squid web proxy, lprng print server, djbdns content and cache, GPS-based NTP server etc)
+- LAN infrastructure services: implemented DNS, DHCP, NTP, TFTP etc on Linux.
+- Mail: using Postfix as MTA, Communigate for IMAP, POP, ActiveSync, webmail, calendaring (2000+ users), FortiMail/IronPort AS/AV appliances as external relays, security protocols like SPF.
+- Active Directory on Samba: Ansible automated deployment of domain controllers and file servers, automated user and computer management, provisioning of user accounts.
+- Team collaboration: project management and time tracking with Trello, knowledge base with GitLab Wiki.
+- Others: helped to deploy, maintain and monitor many other apps, in-house (ERP, reporting, CRM), commercial (like Russian SAP-like accounting platform "1C") and open-source (Apache and Nginx web servers, Squid web proxy, lprng print server, djb dns content and cache, GPS-based NTP servers).
 
 ## Golang development
-- Developing plug-ins for Terraform and Prometheus, enterprise microservices and cloud-native lambdas
-- Building REST and GRPC APIs, using Kafka as event bus
-- ORM and DB interaction with GORM, sqlx, sqlc bun and postgres, sqlite and redis, db migrations with Goose and Atlas
-- Web scraping with gocolly, cascadia and goquery
-- Testing with GoMock, Mockery, gock and gofakeit
-- Code linting with semgrep, golint, nilaway
-- Release management with GitHub Actions, GoReleaser, ko
-- Performance monitoring and profiling with Prometheus, Jaeger, OpenTelemetry
+- Developing plug-ins for Terraform and Prometheus, enterprise microservices, lambdas.
+- Building REST and GRPC APIs, using Kafka as event bus.
+- ORM and DB interaction with GORM, sqlx, sqlc bun and postgres, sqlite and redis, db migrations with Goose and Atlas.
+- Web scraping with gocolly, cascadia and goquery.
+- Testing with GoMock, Mockery, gock and gofakeit.
+- Code linting with semgrep, golint, nilaway.
+- Release management with GitHub Actions, GoReleaser, ko.
+- Performance monitoring and profiling with Prometheus, Jaeger, OpenTelemetry.
+
 ## Monitoring
-- Prometheus TSDB and alerting: high-level scripting with Ansible, writing complex alerting rules, sending notifications to PagerDuty, OpsGenie and Telegram
+- Prometheus TSDB and alerting: high-level scripting with Ansible, writing complex alerting rules, sending notifications to PagerDuty, OpsGenie and Telegram, dashboards with Karma.
 - Linux monitoring: prometheus exporters, standalone tools like atop and NetData
-- Grafana dashboards: designed 20+ company-wide dashboards for the host, network and apps
+- Grafana dashboards: designed 20+ company-wide dashboards for the host, network and apps monitoring
 - Application monitoring: StatsD instrumentation and custom exporters for in-house apps
-- Network monitoring: NetFlow collection for network monitoring and security audit
-- SNMP monitoring: for switches, servers hardware, UPSes etc with snmp_exporter + custom Ansible roles
+- Network monitoring: NetFlow collection for network monitoring and security audit, gathering SNMP data from switches, servers hardware, UPSes, latency monitoring with smokeping
 - Log monitoring: syslog + in-house solutions, Grafana Loki, some experience with Splunk and ELK stack
 - Legacy monitoring systems: Nagios (and custom plugins for it), rrdtool, HPE GlancePlus
 
 ## Networking
-- LAN technologies: RSTP, VLANs, VRRP etc, switch stacking and MLAG, VPC on Cisco Nexus
+- LAN technologies: configuring RSTP, VLANs, VRRP etc, switch stacking and MLAG, VPC on Cisco Nexus
 - WAN technologies: dynamic routing (mostly BGP), IPSec and GRE VPNs, WAN QoS
-- Network design: for HQ, branch and data-centre networks, with varying HA requirements from all-in-one SOHO router to highly available LAN with redundant core and access switches
+- Network design: for HQ, branch and data centre networks, with varying HA requirements, from all-in-one SOHO router to highly available LAN with redundant core and access switches
 - Policy development: authored company-wide network policies like IP allocation and host naming schemes, VLAN and BGP AS assignment, firewall and traffic segmentation rules, DMZ and VPN access policies
-- Device management: Juniper (EX) and Cisco (Nexus and Catalyst) switches (on console and with Ansible), Mikrotik WAN routers/firewalls, Cisco ASA VPN/IPSec/firewall, some familiarity with Extreme Networks, ProCurve/H3C and Huawei switches
+- Device management: managed Juniper (EX) and Cisco (Nexus and Catalyst) switches (on console and with Ansible), Mikrotik WAN routers/firewalls, Cisco ASA VPN/IPSec/firewall, have some familiarity with Extreme Networks, ProCurve/H3C and Huawei switches
 - WiFi networks: Cisco, Ruckus and Aruba controllers and APs, Mikrotik mesh networks, EAP-TLS with FreeRadius and certificate authentication
 
 ## Programming
@@ -104,13 +106,13 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Linux: installing, monitoring, and troubleshooting VMs and bare metal servers, complex network configuration, tuning memory and storage subsystems, performance monitoring and troubleshooting
 - Deployment: creating system services and systemd units, making custom RPM packages, mirroring update repositories, building OVF images
 - Scripting: Shell and Perl scripting, tools like sed/awk, parsing complex logs with Python, writing monitoring plugins and system maintenance scripts
-- Automation: all aspects of Linux system configuration like networking setup, LVM storage, users and shell access, system updates and cleanup, VM cloning and resource configuration
+- Automation: all aspects of Linux system configuration like networking setup, LVM storage, users and shell access, system updates and clean-up, VM cloning and resource configuration
 - System tuning: configuring Linux for different scenarios like Oracle DB, 1000+ shell users, mail or print server
 
 ## Virtualisation
 - VMware ESXi: management of stand-alone hypervisors with [Ansible](https://github.com/veksh/ansible-esxi)
 - VM scripting: Automated VM deployment with shell and [ovftool](https://github.com/veksh/ovfconf)
-- vCenter: enterprise datacenter deployment on shared FibreChannel storage with HA, vMotion, policies, alerts
+- vCenter: enterprise data centre deployment on shared FibreChannel storage with HA, vMotion, policies, alerts
 
 ## Windows
 - Deployment and maintenance: working knowledge of Windows Server edition, storage subsystem configuration, network and firewall management, Active Directory and local accounts management
@@ -123,9 +125,10 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Spent some time catching up with modern software development and deployment, cloud services and automation, containers
 - Served as a private contractor in several small-scale projects, continued on-going support of services at the former place of work
 - Developed some projects with newly-learned tools, like Terraform module for GoDaddy DNS, AWS static site/Cloud Resume automation
+
 ## 1991 to 2022: Maxidom LLC, Saint-Petersburg (HQ), Russia (www.maxidom.ru)
 
-- Lead a team of infrastructure engineers, supporting IT operations for 35 Maxidom and Castorama retail stores, 2 HQ offices, 4 datacenters (around 2000 users, 8000 LAN ports, 100 servers, 300TB of shared storage)
+- Lead a team of infrastructure engineers, supporting IT operations for 35 Maxidom and Castorama retail stores, 2 HQ offices, and 4 data centres: around 2000 users, 8000 LAN ports, 100 servers, 300TB of shared storage
 - Held multiple positions (support engineer, ERP programmer, Oracle DBA, Unix and network engineer), helped to evolve enterprise LAN and services to scale them x100 in size, from one small store LAN to distributed country-wide enterprise
 - Networking: designed and implemented several generations of LANs
     - Designed common network blueprints for large retail store: 20000+ square meters, 500 LAN ports, 5-6 communication centres with stackable switches, optical interlinks, Wi-Fi for office and portable terminals, heavy video surveillance traffic, WAN routers for HQ connectivity
@@ -140,7 +143,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
     - Developed a set of standards and blueprints for deployment and support of common store and office services like file sharing, Squid filtering proxy, mail
     - Implemented monitoring for server hardware, UPS health status, environment temperature
     - Maintained vendor support contract, implemented pool of spare parts to save on support expenses, promptly resolved several hardware-related incidents
-- Datacenter infrastructure: currently operating 4 DCs in Moscow and Saint-Petersburg
+- Data Centre infrastructure: currently operating 4 DCs in Moscow and Saint-Petersburg
     - Implemented highly available virtualised VMWare vSphere cluster, hosting 100+ Linux and Windows VMs for diverse workloads from ERP and databases to file sharing and email servers
     - Planned and implemented DR infrastructure with VM mirroring, DB log shipping, cross-site backups
     - Provisioned FibreChannel shared storage on HPE Primera 650 and Brocade SilkWorm switches
@@ -158,7 +161,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
     - Helped to migrate and localise ERP, HR and accounting apps
     - Implemented Active Directory and file sharing services in HQ and shops, migrated user accounts, set up automated synchronisation with HR database
     - Migrated mail accounts from Exchange and Office365 to on-premise Communigate server
-- Datacenter refresh: designed and implemented new computing infrastructure for enterprise applications
+- Data Centre refresh: designed and implemented new computing infrastructure for enterprise applications
     - Sized, budgeted and ordered servers, storage and networking hardware, engineering infrastructure (HWAC, UPS, racks) and network links for 2 new data centres (Saint Petersburg and Moscow)
     - Supervised equipment installation, configuration and wiring
     - Provisioned Fibre Channel storage, configured data and storage network, WAN links
