@@ -1,16 +1,16 @@
 # Alexey Vekshin
 
-**Unix, Network, DB Engineer | DevOps | Enterprise software developer**
+**Unix, Network, DB Infrastructure Engineer | DevOps | Software developer**
 
 <alexey@veksh.in> | +44 (7988) 703948  | <https://github.com/veksh>
 
 # Summary
 
-I am a Unix, DB and Network Engineer and Software Developer with over 25 years of experience in delivering IT services to businesses. I have a diverse IT background and have worked in a variety of roles, from ERP developer, Unix and VMWare engineer, Network designer, Data Centre architect, and Oracle DBA to IT Infrastructure Team Leader for a medium-sized (7000+ employees) retail company.
+I am a Unix, DB and Network Engineer and Software Developer with over 25 years of experience. I have a diverse IT background and have held various roles, from ERP developer, Unix and VMWare engineer, Network designer, Data Centre architect, and Oracle DBA to IT Infrastructure Team Leader for a medium-sized (7000+ employees) retail company.
 
-My main areas of technical expertise are: Linux administration, data centre virtualisation, LANs and network services, enterprise mail and collaboration software, file sharing and Active Directory services, infrastructure automation, scripting and software development, system and application monitoring, relational databases, enterprise storage, high availability and business continuity, site reliability engineering, network monitoring and security.
+My main areas of technical expertise are Linux administration, data centre virtualisation, LANs and network services, enterprise mail and collaboration software, file sharing and Active Directory services, infrastructure automation, scripting and software development, system and application monitoring, relational databases, enterprise storage, high availability and business continuity, site reliability engineering, network monitoring and security.
 
-My current interests include infrastructure automation (Ansible, Terraform), containerisation and orchestration (Docker, k8s), cloud infrastructure (AWS, Y.Cloud), DevOps and GitOps (GitHub, GitLab), software development (Go, Ruby), and monitoring (Prometheus, Grafana). I'm always eager to learn new technologies and languages, and to try things I've never done before.
+My current interests include infrastructure automation (Ansible, Terraform), containerisation and orchestration (k8s), cloud infrastructure (AWS), DevOps and GitOps (GitLab), software development (Go), and monitoring (Grafana, Prometheus). I'm always eager to learn new technologies and languages and to try things I've never done before.
 
 # Skills
 
@@ -20,7 +20,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Wholistic infrastructure management: using GitLab as network-wide Source of Truth and Ansible as IaC tool for tasks like pushing network configuration to LAN switches, configuring Linux-based DNS and DHCP servers, adding machine accounts to Active Directory, generating LAN configuration reports.
 
 ## Cloud
-- Services: familiar with the basic subset of AWS stack like IAM, EC2, VPCs, S3, CloudFront, DynamoDB.
+- Services: familiar with the essential subset of AWS stack like IAM, EC2, VPCs, S3, CloudFront, DynamoDB.
 - Automation: managing AWS services from awscli, Ansible playbooks, Terraform modules, Python scripts, and with CloudFormation templates
 - VM deployment: image building with Packer, post-install configuration with cloud-init and Ansible.
 - Monitoring: logging to CloudWatch and Grafana Cloud.
@@ -37,7 +37,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Automation: developed several Ansible roles to install, patch and maintain Oracle servers (EE and XE).
 - ETL: a pipeline for Progress to Oracle data transport, bidirectional integration with company web site CMS.
 - DB hot cloning: fan-out partial replication of staging DB with scripted storage snapshots.
-- Other DBs: some familiarity with Progress RDBMS, Postgres, SQLite, KV databases like Redis and DynamoDB.
+- Other DBs: familiar with Progress RDBMS, Postgres, SQLite, KV databases like Redis and DynamoDB.
 
 ## Data Centre networking, hardware and storage
 - Cisco Nexus switches: VPC and QoS configuration, security policies with VLANs and ACLs.
@@ -47,10 +47,10 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Environment monitoring: with APC NetBotz, UniPing and APC UPS temperature sensors.
 
 ## Enterprise applications
-- LAN infrastructure services: implemented DNS, DHCP, NTP, TFTP etc on Linux.
+- LAN infrastructure services: implemented DNS, DHCP, NTP, TFTP, syslog, ssh and so on on Linux.
 - Mail: using Postfix as MTA, Communigate for IMAP, POP, ActiveSync, webmail, calendaring (2000+ users), FortiMail/IronPort AS/AV appliances as external relays, security protocols like SPF.
 - Active Directory on Samba: Ansible automated deployment of domain controllers and file servers, automated user and computer management, provisioning of user accounts.
-- Team collaboration: project management and time tracking with Trello, knowledge base with GitLab Wiki.
+- Team collaboration: project management and time tracking with Trello, a knowledge base with GitLab Wiki.
 - Others: helped to deploy, maintain and monitor many other apps, in-house (ERP, reporting, CRM), commercial (like Russian SAP-like accounting platform "1C") and open-source (Apache and Nginx web servers, Squid web proxy, lprng print server, djb dns content and cache, GPS-based NTP servers).
 
 ## Golang development
@@ -75,7 +75,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 ## Networking
 - LAN technologies: configuring RSTP, VLANs, VRRP etc, switch stacking and MLAG, VPC on Cisco Nexus
 - WAN technologies: dynamic routing (mostly BGP), IPSec and GRE VPNs, WAN QoS
-- Network design: for HQ, branch and data centre networks, with varying HA requirements, from all-in-one SOHO router to highly available LAN with redundant core and access switches
+- Network design: for HQ, branch and data centre networks, with varying HA requirements, from all-in-one SOHO routers to highly available LAN with redundant core and access switches
 - Policy development: authored company-wide network policies like IP allocation and host naming schemes, VLAN and BGP AS assignment, firewall and traffic segmentation rules, DMZ and VPN access policies
 - Device management: managed Juniper (EX) and Cisco (Nexus and Catalyst) switches (on console and with Ansible), Mikrotik WAN routers/firewalls, Cisco ASA VPN/IPSec/firewall, have some familiarity with Extreme Networks, ProCurve/H3C and Huawei switches
 - WiFi networks: Cisco, Ruckus and Aruba controllers and APs, Mikrotik mesh networks, EAP-TLS with FreeRadius and certificate authentication
@@ -93,7 +93,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - In-house CA: implemented with OpenSSL, scripted AnyConnect VPN certificate generation
 - AV defence: mail and file server integration for DrWeb and Kaspersky anti-virus engines
 - Defence in depth: Host IDS and hardening, network and Squid ACLs, WLAN EAP-TLS and per-user PSK, custom firewall rules generator, "deny by default" network policies
-- AD Policies: some experience applying them in Samba AD environment
+- AD Policies: some experience applying them in the Samba AD environment
 
 ## Soft skills
 - Team management: managing engineering team of 3-5 members, dividing and transferring responsibilities, planning sprints with Trello boards, mentoring
@@ -123,12 +123,12 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 
 ## 2022 to present: freelance, self-study
 - Spent some time catching up with modern software development and deployment, cloud services and automation, containers
-- Served as a private contractor in several small-scale projects, continued on-going support of services at the former place of work
-- Developed some projects with newly-learned tools, like Terraform module for GoDaddy DNS, AWS static site/Cloud Resume automation
+- Served as a private contractor in several small-scale projects, continued ongoing support of services at the former place of work
+- Developed some projects with newly learned tools, like Terraform module for GoDaddy DNS, AWS static site/Cloud Resume automation
 
 ## 1991 to 2022: Maxidom LLC, Saint-Petersburg (HQ), Russia (www.maxidom.ru)
 
-- Lead a team of infrastructure engineers, supporting IT operations for 35 Maxidom and Castorama retail stores, 2 HQ offices, and 4 data centres: around 2000 users, 8000 LAN ports, 100 servers, 300TB of shared storage
+- Led a team of infrastructure engineers, supporting IT operations for 35 Maxidom and Castorama retail stores, 2 HQ offices, and 4 data centres: around 2000 users, 8000 LAN ports, 100 servers, 300TB of shared storage
 - Held multiple positions (support engineer, ERP programmer, Oracle DBA, Unix and network engineer), helped to evolve enterprise LAN and services to scale them x100 in size, from one small store LAN to distributed country-wide enterprise
 - Networking: designed and implemented several generations of LANs
     - Designed common network blueprints for large retail store: 20000+ square meters, 500 LAN ports, 5-6 communication centres with stackable switches, optical interlinks, Wi-Fi for office and portable terminals, heavy video surveillance traffic, WAN routers for HQ connectivity
@@ -138,7 +138,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
     - Configured secure Internet access for office workstations and servers in NATed or proxied mode, created DMZs for servers with Mikrotik and Cisco ASA, set up remote VPN access with Cisco AnyConnect, provided restricted L2L VPN access for contractors
     - Automated most device management tasks with scripts and Ansible
 - Server infrastructure for office and branches: supervising the fleet of 60+ servers
-    - Designed corporate standard for centrally managed site infrastructure based on VMWare ESXi, Linux and open-source applications
+    - Designed corporate standards for centrally managed site infrastructure based on VMWare ESXi, Linux and open-source applications
     - Automated DNS/DHCP/AD and network management with Ansible + Gitlab
     - Developed a set of standards and blueprints for deployment and support of common store and office services like file sharing, Squid filtering proxy, mail
     - Implemented monitoring for server hardware, UPS health status, environment temperature
@@ -156,22 +156,22 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Castorama merger: helped to connect 15 retail stores to existing infrastructure, scaling it x1.5 times
     - Was responsible for taking over the control of LAN and server infrastructure (from Kingfisher IT Services), providing a replacement for missed network infrastructure elements (like WLAN controllers)
     - Budgeted, purchased and configured server hardware to support network services, ERP integration, local store operations
-    - Arranged and configured WAN links for stores to interconnect them into company network
-    - Planned and successfully implemented migration procedure with minimal business disruption (overnight store migration) on a tight schedule (1 store every week), performed rolling update to re-use existing network equipment
+    - Arranged and configured WAN links for stores to interconnect them into the company network
+    - Planned and successfully implemented migration procedure with minimal business disruption (overnight store migration) on a tight schedule (1 store every week), performed rolling updates to re-use existing network equipment
     - Helped to migrate and localise ERP, HR and accounting apps
     - Implemented Active Directory and file sharing services in HQ and shops, migrated user accounts, set up automated synchronisation with HR database
-    - Migrated mail accounts from Exchange and Office365 to on-premise Communigate server
+    - Migrated mail accounts from Exchange and Office365 to the on-premise Communigate server
 - Data Centre refresh: designed and implemented new computing infrastructure for enterprise applications
     - Sized, budgeted and ordered servers, storage and networking hardware, engineering infrastructure (HWAC, UPS, racks) and network links for 2 new data centres (Saint Petersburg and Moscow)
     - Supervised equipment installation, configuration and wiring
     - Provisioned Fibre Channel storage, configured data and storage network, WAN links
     - Configured DC-wide network services like DNS and NTP, monitoring infrastructure, host installation and update repositories for VM deployment
     - Installed and configured VMware HA cluster on 8 compute nodes, implemented backup and management servers, designed backup and disaster recovery policy
-    - Planned, documented and supervised migration of enterprise apps like ERP and e-mail from Kinfisher and Microsoft environments to the local in-house platforms
+    - Planned, documented and supervised migration of enterprise apps like ERP and e-mail from Kingfisher and Microsoft environments to the local in-house platforms
 - Smaller projects
 	- Enterprise Wi-Fi network with Ruckus: implemented enterprise-wide controller-based network with granular permissions, inter-site roaming, EAP-TLS certificate authentication
 	- Redundant inter-site links on Mikrotik hardware: replaced ageing Cisco routers with cheaper Mikrotik alternatives, implemented redundant links over L3 VPNs and BGP peering to network operators
-	- AD and CommuniGate integration with HR database: automated user account lifecycle management and rights assignment for AD and e-mail (groupware) accounts based on daily exports from HR database
+	- AD and CommuniGate integration with HR database: automated user account lifecycle management and rights assignment for AD and e-mail (groupware) accounts based on daily exports from the HR database
 	- Unified network and AD computer membership management: developed Ansible-based network and AD management framework, automating DNS, DHCP, AD and switch port configuration with Git repository as the central configuration source
 
 # Education
