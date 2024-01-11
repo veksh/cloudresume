@@ -2,7 +2,7 @@
 
 **Unix, Network, DB Infrastructure Engineer | DevOps | Software developer**
 
-<alexey@veksh.in> | +44 (7988) 703948  | <https://github.com/veksh>
+<alexey@veksh.in> | [github.com/veksh](https://github.com/veksh) | [linkedin.com/in/veksh](https://www.linkedin.com/in/veksh)
 
 # Summary
 
@@ -181,10 +181,9 @@ Master of Science in Microelectronics, Saint-Petersburg State Technical Universi
 - Advanced Microservices Development in Go ([route256](https://route256.ozon.ru/))
 - Cloud Service Engineer ([yandex practicum](https://practicum.yandex.ru/ycloud/))
 - Machine Learning Introduction ([coursera](https://www.coursera.org/specializations/machine-learning-introduction))
-- Splunk Enterprise Management
 - Cisco UCS Administration
 
 # Other information
 Languages: English (good), Russian (native), Hebrew (beginner)
 Citizenship: Russia, Israel
-Residence permit: UK
+Work permit: UK
