@@ -18,6 +18,7 @@ My current interests include infrastructure automation (Ansible, Terraform), con
 - Ansible: using it for 5+ years, designed 20+ roles for managing Linux systems and apps, VMWare ESXi hosts, Cisco and Juniper LAN switches, Samba Active Directory users/units/computers, Oracle v11-18 servers and many other apps and services.
 - Source control and CI/CD: GitLab instance administration, policy development and user education, writing continuous integration pipelines for acceptance testing, application deployment with git.
 - Wholistic infrastructure management: using GitLab as network-wide Source of Truth and Ansible as IaC tool for tasks like pushing network configuration to LAN switches, configuring Linux-based DNS and DHCP servers, adding machine accounts to Active Directory, generating LAN configuration reports.
+- Terraform: managing cloud infrastructure, writing modules and plugins
 
 ## Cloud
 - Services: familiar with the essential subset of AWS stack like IAM, EC2, VPCs, S3, CloudFront, DynamoDB.
