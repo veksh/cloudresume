@@ -7,6 +7,7 @@ on:
     paths:
       - ansible/**
       - data/**
+      - latex/resume.pdf
 
 env:
     # in production better use an OIDC connection + pass `role-to-assume`
@@ -21,6 +22,10 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
+
+      - name: Copy fresh resume from latex dir
+        run: |
+          cp latex/resume.pdf data/pdfs/resume.pdf
 
       - name: Install ansible with pip
         run: |
