@@ -1,0 +1,69 @@
+% based on work of Timmy Chan
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[AV resume package]
+
+% use modern fonts
+\RequirePackage[T1]{fontenc} % Font encoding https://texfaq.org/FAQ-why-inp-font
+\RequirePackage[default,semibold]{sourcesanspro}
+%\RequirePackage[10pt]{moresize}
+%\usepackage{anyfontsize}
+
+% margins and spacing
+\RequirePackage[margin=.5in, top=.5in, bottom=1in]{geometry} % Set Margins
+\raggedright    % left align no indent
+\raggedbottom   % top align no indent
+% \setlength{\parindent}{0mm}
+
+% no page numers
+\pagenumbering{gobble}
+
+% color for links, title etc -- mb make several
+\RequirePackage{xcolor}
+\definecolor{highlight}{RGB}{61, 90, 128}
+
+% links styling (also: same package for PDF keywords, in main document)
+\RequirePackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=highlight}
+
+% custom enums
+\RequirePackage[inline]{enumitem}
+\setlength{\tabcolsep}{0in}
+
+% horizontal cdot-separated list; replace $\cdot$ with \textbar for classic pipe
+\newlist{skillset}{enumerate*}{1}
+\setlist[skillset]{label={}, afterlabel={}, itemjoin={{ $\cdot${} }}}
+
+% section format
+\RequirePackage[nostruts]{titlesec}
+\titlespacing*{\section}{0em}{0.5em}{0em}
+\titleformat{\section}{\color{highlight} \scshape \raggedright \large}{}{0em}{}[\vspace{-0.75em}\hrulefill]
+
+% subsection format
+\titlespacing*{\subsection}{0em}{0em}{0em}
+\titleformat{\subsection}{\bfseries}{}{0em}{}[]
+
+% skill entry is bold
+\newcommand{\skill}[1]{ {\bfseries #1}}
+
+% custom itemize: tighter spacing than itemize
+\setlist[itemize]{align=parleft,left=0pt..1em}
+\newenvironment{zitemize}{
+\begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
+{\end{itemize}\vspace{-.5em}}
+
+% experience section header with "pos", "dates", "company" and "city" args
+\newcommand{\expSubHeading}[4]{
+  \vspace{-0pt}
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1}       & \textbf{#2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt}
+}
+
+% entry for education history: "title", "where", "dates"
+\newcommand{\eduEntry}[3]{
+  \textbf{#1}, \textit{#2} \hfill \textbf{#3} \par
+}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+%\pdfgentounicode=1

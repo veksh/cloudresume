@@ -1,2 +1,28 @@
+# terraform
 terraform/.terraform/*
 terraform/.terraform.lock.hcl
+
+-rw-r--r--  1 alex  staff    1006 Jan 14 22:20 resume.aux
+-rw-r--r--  1 alex  staff   17138 Jan 14 22:20 resume.fdb_latexmk
+-rw-r--r--  1 alex  staff   68005 Jan 14 22:20 resume.fls
+-rw-r--r--  1 alex  staff   25407 Jan 14 22:20 resume.log
+-rw-r--r--  1 alex  staff     292 Jan 14 22:20 resume.out
+-rw-r--r--@ 1 alex  staff  187779 Jan 14 22:20 resume.pdf
+-rw-r--r--@ 1 alex  staff    2195 Jan 14 22:20 resume.sty
+-rw-r--r--@ 1 alex  staff    1512 Jan 14 22:20 resume.tex
+drwxr-xr-x@ 7 alex  staff     224 Jan 14 22:20 sections
+
+# latex
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.fmt
+*.dvi
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync

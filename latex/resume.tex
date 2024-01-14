@@ -1,0 +1,57 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+
+%====================
+% based on Timmy Chan's templates https://www.linkedin.com/in/timmy-l-chan/
+%
+% Files:
+% - resume.tex      main file
+% - resume.sty      style file containing formatting details
+% - sections/
+%   - header        common header code (mb multi-page)
+%   - summary       profile, summary, objectives
+%   - skills        relevant skills in table format
+%   - experience    work history
+%   - education     formal education history
+%====================
+
+\usepackage{resume}
+
+% contact info macros
+\def\name{Alexey Vekshin}
+\def\phone{(+44) 1234 567890}       % hide for now
+\def\city{Oxford, UK}
+\def\email{alexey@veksh.in}
+\def\LinkedIn{veksh}                % linkedin.com/in/<name>
+\def\github{veksh}                  % github username
+\def\homepage{veksh.in}
+\def\role{Senior Infrastructure Engineer}
+\def\keywords{DevOps, Infrastructure, Engineer, Developer, Unix, Linux, VMware, LAN, Oracle, Prometheus, Grafana, Monitoring, Go, Golang, Python, Ruby, Resume, CV}
+
+% pdf metadata
+\hypersetup{
+  pdfauthor = {\name},
+  pdfkeywords = {\keywords},
+  pdftitle = {\name: Resume},
+  pdfsubject = {\name's Resume},
+  pdfpagemode = UseNone
+}
+
+\input{sections/header}
+
+\begin{document}
+\input{sections/summary}
+
+\section{Skills}
+\input{sections/skills}
+
+\section{Recent Experience}
+\input{sections/experience}
+
+\section{Education}
+\input{sections/education}
+
+% make a newpage wherever it is a clean break
+% \newpage
+
+\end{document}
