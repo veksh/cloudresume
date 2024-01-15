@@ -7,7 +7,7 @@ on:
     paths:
       - ansible/**
       - data/**
-      - latex/resume.pdf
+      - latex/**
 
 env:
     # in production better use an OIDC connection + pass `role-to-assume`
@@ -15,17 +15,53 @@ env:
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
-  deploy:
-    name: Run ansible playbook
+  latex:
+    name: Run pdflatex
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Copy fresh resume from latex dir
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v3
+        with:
+          # alt: package_file:
+          packages: >
+            latex latex-bin sourcesanspro moresize xcolor hyperref enumitem
+            titlesec ec ly1 geometry pdftexcmds fancyhdr amsfonts xkeyval
+            infwarerr kvoptions etoolbox
+
+      - name: Run pdflatex
         run: |
-          cp latex/resume.pdf data/pdfs/resume.pdf
+          cd latex
+          pdflatex resume.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: resume
+          path: latex/resume.pdf
+          if-no-files-found: error
+
+  upload:
+    name: Upload data to S3 with ansible
+    runs-on: ubuntu-latest
+    needs: latex
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      # - name: Copy fresh resume from latex dir
+      #   run: |
+      #     cp latex/resume.pdf data/pdfs/resume.pdf
+
+      - name: Download built resume
+        uses: actions/download-artifact@v4
+        with:
+          name: resume
+          path: data/pdfs/
 
       - name: Install ansible with pip
         run: |

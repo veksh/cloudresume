@@ -1,11 +1,12 @@
 name: build resume pdf from latex source
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - latex/**
+  on: workflow_dispatch  # switch to manual run for now
+  # push:
+  #   branches:
+  #     - master
+  #   paths:
+  #     - latex/**
 
 # env:
 
@@ -36,4 +37,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: resume
-          path: resume/resume.pdf
+          path: latex/resume.pdf
+          if-no-files-found: error
