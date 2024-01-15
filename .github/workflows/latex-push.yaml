@@ -1,7 +1,7 @@
 name: build resume pdf from latex source
 
 on:
-  on: workflow_dispatch  # switch to manual run for now
+  workflow_dispatch  # switch to manual run for now
   # push:
   #   branches:
   #     - master
