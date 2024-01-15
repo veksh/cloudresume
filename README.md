@@ -1,4 +1,4 @@
-# cloudresume
+# Cloud Resume
 
 Simple framework designed to automate the deployment of my [resume site](https://resume.veksh.in) on AWS. It was inspired by the [cloud resume challenge](https://cloudresumechallenge.dev/)
 
@@ -7,12 +7,14 @@ Simple framework designed to automate the deployment of my [resume site](https:/
 - Terraform to create the necessary infrastructure: S3 bucket to store the files, CloudFront distribution to provide https access to them, ACM certificate for https and GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM.
 - Ansible to update site contents.
 - GitHub actions to check code on PR and to trigger Terraform and Ansible runs on data or code changes.
+- Latex to typeset resume in PDF format.
 
 ## External requirements and configuration
 
 - AWS and GoDaddy credentials must be set in repository secrets (`AWS_ACCESS_KEY_ID` + `AWS_SECRET_ACCESS_KEY` and `GODADDY_API_KEY` + `GODADDY_API_SECRET`).
 - Terraform expects to have an s3 bucket to keep the state there, steps to create are outlined [in this gist](https://gist.github.com/veksh/c6804b0d32f5138a92fa1cdb7ed67f7d)
 - Some values (like bucket name for TF state) are hard-coded to simlpify configuration, review `ansible/upload.yaml` and `terraform/main.yaml` if cloning.
+- Package list for TexLive is hard-coded to reflect my current resume template requirements.
 
 ## Notes on operation
 
