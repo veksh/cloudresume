@@ -1,13 +1,22 @@
 # Cloud Resume
 
-Simple framework designed to automate the deployment of my [resume site](https://resume.veksh.in) on AWS. It was inspired by the [cloud resume challenge](https://cloudresumechallenge.dev/)
+Simple framework designed to automate the deployment of my [resume site](https://resume.veksh.in) on AWS. It was inspired by the [cloud resume challenge](https://cloudresumechallenge.dev/).
 
-## Tools
+## Tools and components
 
-- Terraform to create the necessary infrastructure: S3 bucket to store the files, CloudFront distribution to provide https access to them, ACM certificate for https and GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM.
-- Ansible to update site contents.
-- GitHub actions to check code on PR and to trigger Terraform and Ansible runs on data or code changes.
-- Latex to typeset resume in PDF format.
+- Terraform to create the necessary infrastructure
+- AWS:
+  - S3 bucket to store the files
+  - CloudFront distribution to provide https access to them
+  - ACM certificate for https
+- GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM
+- Ansible to update site contents
+- GitHub actions to 
+  - Check Terraform and Ansible code on PR
+  - Trigger Terraform run on infrastructure change
+  - Re-build PDF resume from source
+  - Upload HTML and PDF to S3 on change
+- Latex to typeset resume in PDF format
 
 ## External requirements and configuration
 
