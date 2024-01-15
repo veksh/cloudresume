@@ -41,12 +41,6 @@
         h2 {
             color: #00b3b3;
         }
-        .contact-info {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
         .pdf-link {
             display: block;
             background-color: #007bff;
@@ -60,14 +54,12 @@
         .pdf-link:hover {
             background-color: #0056b3;
         }
-        .contacts-table: {
-            border: 0
-            border-spacing: 20px;
-            border-collapse: separate;
-            background-color: #000000;
+        #contacts-table {
+            display: block;
         }
-        .contacts-td {
-           padding: 10px;
+        #contacts-table td {
+            display: inline-block;
+            padding: 10px;
         }
     </style>
 </head>
@@ -76,14 +68,14 @@
         <h1>Alexey Vekshin</h1>
         <p>IT Infrastructure Engineer</p>
         <center>
-            <table class="contacts-table" width="50%">
+            <table id="contacts-table" width="60%">
                 <tr>
-                    <td class="contacts-td"><script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+"'"+'>'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+'<'+'/'+'a'+'>');</script>
+                    <td><script type="text/javascript">document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+':'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+"'"+'>'+'a'+'l'+'e'+'x'+'e'+'y'+'@'+'v'+'e'+'k'+'s'+'h'+'.'+'i'+'n'+'<'+'/'+'a'+'>');</script>
                     </td>
-                    <td class="contacts-td">
+                    <td>
                         <a href="https://github.com/veksh" target="_blank">github.com/veksh</a>
                     </td>
-                    <td class="contacts-td"><a href="https://www.linkedin.com/in/veksh" target="_blank">linkedin.com/in/veksh</a></td>
+                    <td><a href="https://www.linkedin.com/in/veksh" target="_blank">linkedin.com/in/veksh</a></td>
                 </tr>
             </table>
         </center>
