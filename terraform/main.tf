@@ -150,11 +150,11 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   # # mb also
-  # logging_config {
-  #   include_cookies = false
-  #   bucket          = "mylogs.s3.amazonaws.com"
-  #   prefix          = "myprefix"
-  # }
+  logging_config {
+    include_cookies = false
+    bucket          = "veksh-logs"
+    prefix          = "cloudresume"
+  }
 }
 
 data "aws_iam_policy_document" "main_s3_policy_doc" {
