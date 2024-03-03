@@ -149,10 +149,9 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     ssl_support_method = "sni-only"
   }
 
-  # # mb also
   logging_config {
     include_cookies = false
-    bucket          = "veksh-logs"
+    bucket          =  var.log_bucket_name
     prefix          = "cloudresume"
   }
 }

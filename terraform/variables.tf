@@ -23,3 +23,11 @@ variable "website_domain" {
   type        = string
   default     = "veksh.in"
 }
+
+variable "log_bucket_name" {
+  description = "full name of the bucket for cloudfront logs"
+  type        = string
+  default     = "veksh-logs.s3.eu-west-2.amazonaws.com"
+}
+
+
