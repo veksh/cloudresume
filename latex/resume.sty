@@ -48,12 +48,13 @@
 % custom itemize: tighter spacing than itemize
 \setlist[itemize]{align=parleft,left=0pt..1em}
 \newenvironment{zitemize}{
+\vspace{-5pt}
 \begin{itemize} \itemsep 0pt \parskip 0pt \parsep 1pt}
-{\end{itemize}\vspace{-.5em}}
+{\end{itemize}\vspace{-10pt}}
 
 % experience section header with "pos", "dates", "company" and "city" args
 \newcommand{\expSubHeading}[4]{
-  \vspace{-0pt}
+  \vspace{2pt}
     \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1}       & \textbf{#2} \\
       \textit{\small#3} & \textit{\small #4} \\
