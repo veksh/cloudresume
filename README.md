@@ -4,13 +4,13 @@ Simple framework designed to automate the deployment of my [resume site](https:/
 
 ## Tools and components
 
-- LaTeX to typeset resume in PDF format
-- Terraform to create the necessary infrastructure on AWS:
-  - S3 bucket to store the files
-  - CloudFront distribution to provide https access to them
-  - ACM certificate for https
+- Terraform to create the necessary infrastructure:
+  - AWS S3 bucket to store the files
+  - AWS CloudFront distribution to provide https access to them
+  - AWS ACM certificate for https
   - GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM
 - Ansible to upload site contents to S3 (actually [s3cmd](https://s3tools.org/s3cmd) would be easier, but doing it with Ansible is more fun)
+- LaTeX to typeset resume in PDF format
 - GitHub actions to trigger
   - PDF resume rebuild on TeX source changes
   - code checks for Terraform and Ansible on PR creation
