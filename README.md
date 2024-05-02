@@ -9,13 +9,13 @@ Simple framework designed to automate the deployment of my [resume site](https:/
   - S3 bucket to store the files
   - CloudFront distribution to provide https access to them
   - ACM certificate for https
-- GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM
-- Ansible to upload site contents to S3 (actually [s3cmd](https://s3tools.org/s3cmd) would be faster and easier)
+  - GoDaddy [DNS records](https://github.com/veksh/terraform-provider-godaddy-dns) for the main site and for the DNS challenge from ACM
+- Ansible to upload site contents to S3 (actually [s3cmd](https://s3tools.org/s3cmd) would be easier, but doing it with Ansible is more fun)
 - GitHub actions to trigger
   - PDF resume rebuild on TeX source changes
-  - Terraform and Ansible code checks on PR
-  - Terraform run on infrastructure change
-  - Ansible run to upload HTML and PDF to S3
+  - code checks for Terraform and Ansible on PR creation
+  - Terraform run on change of infrastructure definitions
+  - Ansible run to upload modified HTML and PDF to S3
 
 ## External requirements and configuration
 
@@ -26,4 +26,4 @@ Simple framework designed to automate the deployment of my [resume site](https:/
 
 ## Notes on operation
 
-It is recommended to manually run `terraform apply` for the first time to create the infrastructure: there is no real dependency between Ansible and Terraform runs, and Ansible may fail to upload files if bucket has not yet been created (although this is usually not the case, it is better to avoid the race).
+It is recommended to manually run `terraform apply` for the first time to create the infrastructure: there is no real dependency between Ansible and Terraform runs, and Ansible may fail to upload files if bucket has not yet been created (it is better to avoid the race, although usually Terraform finishes faster).
